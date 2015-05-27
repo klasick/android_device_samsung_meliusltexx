@@ -14,26 +14,20 @@
 # limitations under the License.
 #
 
-# Enhanced NFC
-$(call inherit-product, vendor/cm/config/nfc_enhanced.mk)
-
-# Inherit some common CM stuff.
-$(call inherit-product, vendor/cm/config/common_full_phone.mk)
-
+# Inherit some common device stuff.
 $(call inherit-product, device/samsung/meliusltexx/full_meliusltexx.mk)
+
+# Inherit some common Carbon stuff.
+$(call inherit-product, vendor/carbon/config/common_phone.mk)
 
 # product
 PRODUCT_DEVICE := meliusltexx
 PRODUCT_BRAND := Samsung
-PRODUCT_NAME := cm_meliusltexx
+PRODUCT_NAME := carbon_meliusltexx
 PRODUCT_MODEL := GT-I9205
-PRODUCT_MANUFACTURER := samsung
+PRODUCT_MANUFACTURER := Samsung
 
 # override
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    BUILD_NUMBER=I9205XXUDNE4 \
-    TARGET_DEVICE=meliuslte \
-    TARGET_BUILD_TYPE=user \
-    BUILD_VERSION_TAGS=release-keys \
     PRIVATE_BUILD_DESC="meliusltexx-user 4.4.2 KOT49H I9205XXUDNE4 release-keys" \
     BUILD_FINGERPRINT="samsung/meliusltexx/meliuslte:4.4.2/KOT49H/I9205XXUDNE4:user/release-keys"
