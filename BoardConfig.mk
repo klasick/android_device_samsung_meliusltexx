@@ -21,12 +21,23 @@
 # External apps on SD
 TARGET_EXTERNAL_APPS = sdcard1
 
-# Default toolchain
-TARGET_GCC_VERSION_EXP := 4.8
-
 # Kernel
 TARGET_KERNEL_VARIANT_CONFIG := msm8930_melius_eur_lte_defconfig
-#TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.7
 
 # NFC
 BOARD_HAVE_NFC := true
+
+# Optimizations
+BLISSIFY := true
+BLISS_O3 := true
+BLISS_KRAIT := true
+BLISS_PIPE := true
+ENABLE_GCCONLY := true
+TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
+TARGET_TC_ROM := 4.8
+TARGET_TC_KERNEL := 4.8
+TARGET_GCC_VERSION_EXP := $(TARGET_TC_ROM)
+TARGET_KERNEL_CUSTOM_TOOLCHAIN := $(TARGET_TC_KERNEL)
+
+#SaberMod
+-include vendor/bliss/config/sm.mk
